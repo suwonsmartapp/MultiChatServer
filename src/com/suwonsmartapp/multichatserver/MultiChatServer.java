@@ -49,6 +49,7 @@ public class MultiChatServer {
 	}
 	
 	private void sendToAll(String message) {
+		System.out.println(message);
 		synchronized (mClientList) {
 			for (ClientInfo client : mClientList) {
 				try {
@@ -90,7 +91,7 @@ public class MultiChatServer {
 					sendToAll(mInputStream.readUTF());
 				}
 			} catch (IOException e) {
-				e.printStackTrace();
+				
 			} finally {
 				// 접속 종료시	
 				removeClient(mClientInfo);
