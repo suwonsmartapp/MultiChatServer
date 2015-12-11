@@ -92,7 +92,7 @@ public class MultiChatServer {
 			try {
 				// 계속 듣기만
 				while (mInputStream != null) {
-					sendToAll("[" + mClientInfo.getNickName() + "] " + mInputStream.readUTF());
+					sendToAll(mInputStream.readUTF());
 				}
 			} catch (IOException e) {
 				
